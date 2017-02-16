@@ -15,9 +15,7 @@ class HTTPTest < Minitest::Test
     assert_equal 200, response.status
   end
 
-
   def test_can_return_datetime
-    skip
     response = Faraday.get 'http://127.0.0.1:9292/datetime'
     assert response.body.include?("2017")
   end
@@ -33,10 +31,9 @@ class HTTPTest < Minitest::Test
     assert_equal expected, response.body
   end
 
-  def test_zzz_can_it_can_return_total_request_phrase
+  def test_it_can_return_total_request_phrase
     skip
     response = Faraday.get 'http://127.0.0.1:9292/shutdown'
-
     assert response.body.include?("All Requests:")
   end
 end
