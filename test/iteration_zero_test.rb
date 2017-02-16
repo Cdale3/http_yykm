@@ -14,11 +14,11 @@ class IterationZeroTest < Minitest::Test
 
 	def test_will_respond_to_an_http_request
  		%x( pwd )
-		server = IterationZero.new
-		server.listen_and_respond(9292)
-		Faraday.get("http://127.0.0.1:9292/")
+		# server = IterationZero.new
+		# server.listen_and_respond(9292)
+		response = Faraday.get("http://127.0.0.1:9292/")
 
-		assert_equal Faraday.get("http://127.0.0.1:9292/"), "0"
+		assert_equal response.body, "..."
 	 end
 
 end
