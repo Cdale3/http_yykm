@@ -21,10 +21,9 @@ class IterationTwoTest < Minitest::Test
 
 		response  = Faraday.get('http://127.0.0.1:9292/hello')
 		refute response.body.include?('billybob squirrel')
-
 	end
 
-	 def test_responds_200
+	def test_responds_200
     response = Faraday.get 'http://127.0.0.1:9292/'
     assert_equal 200, response.status
   end
@@ -37,10 +36,9 @@ class IterationTwoTest < Minitest::Test
     refute response.body.include?("2050")
   end
 
-   def test_it_can_return_all_requests
+  def test_it_can_return_all_requests
     skip
     response = Faraday.get 'http://127.0.0.1:9292/shutdown'
-
     assert response.body.include?("All Requests")
   end
 end

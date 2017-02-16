@@ -3,11 +3,9 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
 require 'faraday'
-
 require './lib/iteration_zero'
 
-class IterationZeroTest < Minitest::Capybara::Test 
-	
+class IterationZeroTest < Minitest::Capybara::Test 	
 		def test_it_gets_hello_world
 			 visit "http://127.0.0.1:9292/"	
 
@@ -15,3 +13,4 @@ class IterationZeroTest < Minitest::Capybara::Test
 		end
 end
 #Capybara error: since this isn't a rails project, rack_test driver errors in console. Unsure how to resolve.
+#this was an attempt to incorporate Capybara. Will have to wait until Mod2!

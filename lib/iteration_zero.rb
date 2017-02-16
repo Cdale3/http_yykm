@@ -25,8 +25,17 @@ class IterationZero
     @client.puts headers
 		@client.puts output
 	end
+
+	def hello
+    @counter += 1
+    "<h1> Hello World! (#{@counter}) </h1>"
+  end
+
+	def datetime
+   " <h1>#{Time.now.strftime('%m %M %p on %A %B %w %Y')}</h1> "
+	end
 end
 
 # server = IterationZero.new
 # server.listen_and_respond(9292)
-#if running this file, keep lines 35 & 36, otherwise run interation_zero_test.rb
+#if running this file, keep two lines above, otherwise run interation_zero_test.rb
